@@ -1,6 +1,10 @@
 # Use the official Python image as the base image
 FROM python:3.8-slim-buster
 
+# Install Node.js
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+RUN apt-get update && apt-get install -y nodejs
+
 # Set the working directory to /app
 WORKDIR /cloudProject/todo_list
 
@@ -16,4 +20,4 @@ COPY . .
 EXPOSE 8000
 
 # Start the Django development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]

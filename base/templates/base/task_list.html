@@ -25,10 +25,14 @@
 
 
 <!-- Hidden form. Form submits new item positions -->
-<form style="display: none;" id="reorderForm" method="post" action="{% url 'task-reorder' %}">
+<form style="display: none; background-color: rgba(0, 0, 255, 0.5);" id="reorderForm" method="post" action="{% url 'task-reorder' %}">
     {% csrf_token %}
     <input type="hidden" id="positionInput" name="position">
 </form>
+
+
+<div id="calendar"></div>
+
 
 
 <div id="tasklist" class="task-items-wrapper">
@@ -49,9 +53,10 @@
 
     {% empty %}
     <div style="text-align: center; padding-bottom: 10px; line-height: 1em;">
-        <h3>No new tasks are created.</h3>
-        <h3>Create a <a style="text-decoration: none; color: #e53935;" href="{% url 'task-create' %}">New task</a> ! </h3>
+        <h3 style="font-weight: bold; color:#EBF5FB">No new tasks are created.</h3>
+        <h3 style="font-weight: bold; color:#EBF5FB">Create a <a class="btn btn-outline-success" role="button" aria-pressed="true" href="{% url 'task-create' %}">New task</a> ! </h3>
     </div>
+
     {% endfor %}
 </div>
 
