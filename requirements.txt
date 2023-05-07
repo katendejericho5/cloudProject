@@ -6,7 +6,7 @@ Beaker==1.10.0
 beautifulsoup4==4.12.2
 binaryornot==0.4.4
 blivet==3.5.0
-blivet-gui==2.4.1
+#blivet-gui==2.4.1
 Brlapi==0.8.4
 certifi==2022.12.7
 cffi==1.15.1
