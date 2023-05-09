@@ -1,1 +1,1 @@
-this is a simple to do list
+This is a todo app
