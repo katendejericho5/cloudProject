@@ -33,7 +33,7 @@ jobs:
         env:
           DB_NAME: "db.sqlite3"
           DB_PATH: "./"
-          SECRET_KEY: "d)=^c7!0-oqjmqve%(bt+p#sq6x*ipz2keh741j*-@f@_)f!1t"
+          SECRET_KEY: 'd)=^c7!0-oqjmqve%(bt+p#sq6x*ipz2keh741j*-@f@_)f!1t'
           
         run: |
           
