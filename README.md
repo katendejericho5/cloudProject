@@ -1,2 +1,2 @@
-This is a todo app
+This is a  SIMPLE todo app 
 
