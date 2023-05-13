@@ -36,6 +36,6 @@ jobs:
           SECRET_KEY: "d)=^c7!0-oqjmqve%(bt+p#sq6x*ipz2keh741j*-@f@_)f!1t"
           
         run: |
-          python manage.py collectstatic --noinput
+          
           python manage.py migrate --noinput
           python manage.py runserver
