@@ -36,3 +36,7 @@ class PasswordAuthenticationTests(TestCase):
 
         # Check if the user is logged out
         self.assertFalse('_auth_user_id' in self.client.session)
+        
+        
+        
+        
