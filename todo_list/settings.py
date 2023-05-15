@@ -25,7 +25,7 @@ SECRET_KEY = 'd)=^c7!0-oqjmqve%(bt+p#sq6x*ipz2keh741j*-@f@_)f!1t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["venv.eu-north-1.elasticbeanstalk.com"]
+ALLOWED_HOSTS = ["venv.eu-north-1.elasticbeanstalk.com","127.0.0.1",]
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
+    'todo_list',
 ]
 
 MIDDLEWARE = [
