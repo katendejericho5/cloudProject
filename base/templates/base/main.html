@@ -17,7 +17,7 @@
 
     <style>
         body {
-            background-image: url('https://images.unsplash.com/photo-1586202690180-1967f682ef1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHRvJTIwZG8lMjBsaXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+            background-image: url('https://img.freepik.com/free-photo/flat-lay-notebook-with-list-desk_23-2148938724.jpg?size=626&ext=jpg&ga=GA1.1.1548982040.1684144319&semt=ais');
             background-color: #F5CB86;
             font-family: 'Nunito', sans-serif;
             padding-top: 50px;
@@ -68,8 +68,25 @@
             color: #fff;
             padding: 10px;
             border-radius: 5px 5px 0 0;
-            background: linear-gradient(90deg, #EEA390 0%, #EB796F 43%, #EB796F 100%);
-        }
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	        background-size: 400% 400%;
+	        animation: gradient 10s ease infinite;
+	        height: 15vh;
+}
+
+            @keyframes gradient {
+	     0% {
+		 background-position: 0% 50%;
+	     }
+	     50% {
+		 background-position: 100% 50%;
+	     }
+	     100% {
+		 background-position: 0% 50%;
+	     }
+}
+
+        
 
         .header-bar a {
             color: rgb(247, 247, 247);
