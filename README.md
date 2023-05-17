@@ -1,2 +1,2 @@
-This is a  SIMPLE todo app 
+This is a  SIMPLE and precise todo app 
 
