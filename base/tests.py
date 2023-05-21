@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
+from django.urls import reverse
 
 User = get_user_model()
 
@@ -12,16 +13,22 @@ class PasswordAuthenticationTests(TestCase):
 
     def test_login(self):
         # Attempt to authenticate the user with the correct credentials
-        response = self.client.post('/login/', {'username': self.username, 'password': self.password})
-        self.assertEqual(response.status_code, 302)  # Assuming a successful login redirects
+        url = reverse('login')
+        data = {'username': self.username, 'password': self.password}
+        response = self.client.post(url, data)
+
+        self.assertRedirects(response, reverse('tasks'))  # Update 'home' with the correct URL name
 
         # Check if the user is logged in
-        self.assertTrue('_auth_user_id' in self.client.session)
+        self.assertTrue(self.client.session['_auth_user_id'])
 
     def test_login_incorrect_password(self):
         # Attempt to authenticate the user with an incorrect password
-        response = self.client.post('/login/', {'username': self.username, 'password': 'wrongpass'})
-        self.assertEqual(response.status_code, 200)  # Assuming a failed login returns to the same page
+        url = reverse('login')
+        data = {'username': self.username, 'password': 'testpass'}
+        response = self.client.post(url, data)
+
+        self.assertEqual(response.status_code, 200)
 
         # Check if the user is not logged in
         self.assertFalse('_auth_user_id' in self.client.session)
@@ -31,12 +38,10 @@ class PasswordAuthenticationTests(TestCase):
         self.client.login(username=self.username, password=self.password)
 
         # Log out the user
-        response = self.client.get('/logout/')
-        self.assertEqual(response.status_code, 302)  # Assuming a successful logout redirects
+        url = reverse('logout')
+        response = self.client.get(url)
+
+        self.assertRedirects(response, reverse('login'))  # Update 'home' with the correct URL name
 
         # Check if the user is logged out
         self.assertFalse('_auth_user_id' in self.client.session)
-        
-        
-        
-        
