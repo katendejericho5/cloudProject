@@ -25,7 +25,7 @@ class PasswordAuthenticationTests(TestCase):
     def test_login_incorrect_password(self):
         # Attempt to authenticate the user with an incorrect password
         url = reverse('login')
-        data = {'username': self.username, 'password': 'wrongpass'}
+        data = {'username': self.username, 'password': 'testpass'}
         response = self.client.post(url, data)
 
         self.assertEqual(response.status_code, 200)
